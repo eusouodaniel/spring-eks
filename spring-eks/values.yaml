@@ -1,0 +1,60 @@
+replicaCount: 2
+
+image:
+  repository: danielrodriguess/spring-eks
+  pullPolicy: Always
+  tag: latest
+
+imagePullSecrets: []
+
+nameOverride: ''
+
+fullnameOverride: ''
+
+serviceAccount:
+  create: false
+  annotations: {}
+  name: ''
+
+podAnnotations: {}
+
+podSecurityContext: {}
+
+securityContext: {}
+
+service:
+  type: LoadBalancer
+  port: 80
+
+ingress:
+  enabled: false
+  annotations: {}
+  hosts:
+    - host: chart-example.local
+      paths:
+        - path: /
+          backend:
+            serviceName: chart-example.local
+            servicePort: 80
+  tls: []
+
+resources:
+  requests:
+    memory: 512Mi
+    cpu: 512m
+  limits:
+    memory: 768Mi
+    cpu: 768m
+
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 4
+  targetCPUUtilizationPercentage: 80
+  targetMemoryUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
