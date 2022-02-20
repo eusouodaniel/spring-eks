@@ -29,4 +29,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       
       - name: Push image
-        run: docker push danielrodriguess/spring-eks:$(echo $GITHUB_SHA | head -c7 )
+        run: |
+          docker push danielrodriguess/spring-eks:$(echo $GITHUB_SHA | head -c7 )
+          docker tag danielrodriguess/spring-eks:$(echo $GITHUB_SHA | head -c7 ) danielrodriguess/spring-eks:latest
+          docker push danielrodriguess/spring-eks:latest
