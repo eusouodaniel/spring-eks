@@ -2,7 +2,7 @@ replicaCount: 2
 image:
   repository: danielrodriguess/spring-eks
   pullPolicy: Always
-  tag: 4dc8fd4
+  tag: bfd57b5
 imagePullSecrets: []
 nameOverride: ''
 fullnameOverride: ''
