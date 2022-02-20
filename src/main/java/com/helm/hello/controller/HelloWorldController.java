@@ -11,7 +11,7 @@ public class HelloWorldController {
 
     @GetMapping
     public ResponseEntity<String> index() {
-        return ResponseEntity.ok().body("Hello World!");
+        return ResponseEntity.ok().body("Hello World teste deploy!");
     }
 
 }
