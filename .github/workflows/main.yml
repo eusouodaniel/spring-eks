@@ -49,4 +49,4 @@ jobs:
           value: ${{ steps.generate_sha.outputs.sha }}
           commitChange: true
           updateFile: true
-          message: "NEW: Update tag in values helm"
+          message: "NEW: Update tag in values helm" 
